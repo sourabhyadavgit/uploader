@@ -1,0 +1,232 @@
+login as: ec2-user
+Authenticating with public key "ec2_sourabh"
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sun Mar 31 14:43:27 2024 from 78.105.36.198
+[ec2-user@ip-172-31-93-3 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-93-3 ~]$ cd sourabh/
+[ec2-user@ip-172-31-93-3 sourabh]$ cd uploaded_files/
+[ec2-user@ip-172-31-93-3 uploaded_files]$ ls
+Docker_Kubernetes_All_Days.zip
+[ec2-user@ip-172-31-93-3 uploaded_files]$ ls -lrt
+total 2268
+-rw-r--r--. 1 ec2-user ec2-user 2319079 Mar 31 14:59 Docker_Kubernetes_All_Days.zip
+[ec2-user@ip-172-31-93-3 uploaded_files]$ sudo yum update
+Last metadata expiration check: 0:12:17 ago on Sun Mar 31 14:48:49 2024.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-93-3 uploaded_files]$ sudo yum install nginx
+Last metadata expiration check: 0:12:30 ago on Sun Mar 31 14:48:49 2024.
+Dependencies resolved.
+=============================================================================================================================================================================================
+ Package                                          Architecture                        Version                                                 Repository                                Size
+=============================================================================================================================================================================================
+Installing:
+ nginx                                            x86_64                              1:1.24.0-1.amzn2023.0.2                                 amazonlinux                               32 k
+Installing dependencies:
+ generic-logos-httpd                              noarch                              18.0.0-12.amzn2023.0.3                                  amazonlinux                               19 k
+ gperftools-libs                                  x86_64                              2.9.1-1.amzn2023.0.3                                    amazonlinux                              308 k
+ libunwind                                        x86_64                              1.4.0-5.amzn2023.0.2                                    amazonlinux                               66 k
+ nginx-core                                       x86_64                              1:1.24.0-1.amzn2023.0.2                                 amazonlinux                              586 k
+ nginx-filesystem                                 noarch                              1:1.24.0-1.amzn2023.0.2                                 amazonlinux                              9.1 k
+ nginx-mimetypes                                  noarch                              2.1.49-3.amzn2023.0.3                                   amazonlinux                               21 k
+
+Transaction Summary
+=============================================================================================================================================================================================
+Install  7 Packages
+
+Total download size: 1.0 M
+Installed size: 3.4 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/7): nginx-1.24.0-1.amzn2023.0.2.x86_64.rpm                                                                                                                565 kB/s |  32 kB     00:00
+(2/7): nginx-core-1.24.0-1.amzn2023.0.2.x86_64.rpm                                                                                                           7.3 MB/s | 586 kB     00:00
+(3/7): libunwind-1.4.0-5.amzn2023.0.2.x86_64.rpm                                                                                                             2.1 MB/s |  66 kB     00:00
+(4/7): gperftools-libs-2.9.1-1.amzn2023.0.3.x86_64.rpm                                                                                                       3.2 MB/s | 308 kB     00:00
+(5/7): nginx-mimetypes-2.1.49-3.amzn2023.0.3.noarch.rpm                                                                                                      1.1 MB/s |  21 kB     00:00
+(6/7): generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch.rpm                                                                                                 1.2 MB/s |  19 kB     00:00
+(7/7): nginx-filesystem-1.24.0-1.amzn2023.0.2.noarch.rpm                                                                                                     594 kB/s | 9.1 kB     00:00
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                        5.3 MB/s | 1.0 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                     1/1
+  Running scriptlet: nginx-filesystem-1:1.24.0-1.amzn2023.0.2.noarch                                                                                                                     1/7
+  Installing       : nginx-filesystem-1:1.24.0-1.amzn2023.0.2.noarch                                                                                                                     1/7
+  Installing       : nginx-mimetypes-2.1.49-3.amzn2023.0.3.noarch                                                                                                                        2/7
+  Installing       : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                                                   3/7
+  Installing       : libunwind-1.4.0-5.amzn2023.0.2.x86_64                                                                                                                               4/7
+  Installing       : gperftools-libs-2.9.1-1.amzn2023.0.3.x86_64                                                                                                                         5/7
+  Installing       : nginx-core-1:1.24.0-1.amzn2023.0.2.x86_64                                                                                                                           6/7
+  Installing       : nginx-1:1.24.0-1.amzn2023.0.2.x86_64                                                                                                                                7/7
+  Running scriptlet: nginx-1:1.24.0-1.amzn2023.0.2.x86_64                                                                                                                                7/7
+  Verifying        : nginx-1:1.24.0-1.amzn2023.0.2.x86_64                                                                                                                                1/7
+  Verifying        : nginx-core-1:1.24.0-1.amzn2023.0.2.x86_64                                                                                                                           2/7
+  Verifying        : gperftools-libs-2.9.1-1.amzn2023.0.3.x86_64                                                                                                                         3/7
+  Verifying        : libunwind-1.4.0-5.amzn2023.0.2.x86_64                                                                                                                               4/7
+  Verifying        : nginx-mimetypes-2.1.49-3.amzn2023.0.3.noarch                                                                                                                        5/7
+  Verifying        : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                                                   6/7
+  Verifying        : nginx-filesystem-1:1.24.0-1.amzn2023.0.2.noarch                                                                                                                     7/7
+
+Installed:
+  generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch   gperftools-libs-2.9.1-1.amzn2023.0.3.x86_64       libunwind-1.4.0-5.amzn2023.0.2.x86_64          nginx-1:1.24.0-1.amzn2023.0.2.x86_64
+  nginx-core-1:1.24.0-1.amzn2023.0.2.x86_64           nginx-filesystem-1:1.24.0-1.amzn2023.0.2.noarch   nginx-mimetypes-2.1.49-3.amzn2023.0.3.noarch
+
+Complete!
+[ec2-user@ip-172-31-93-3 uploaded_files]$ sudo systemctl start nginx
+[ec2-user@ip-172-31-93-3 uploaded_files]$ ps -ef|grep nginx
+root       26317       1  0 15:01 ?        00:00:00 nginx: master process /usr/sbin/nginx
+nginx      26318   26317  0 15:01 ?        00:00:00 nginx: worker process
+ec2-user   26320    3118  0 15:02 pts/1    00:00:00 grep --color=auto nginx
+[ec2-user@ip-172-31-93-3 uploaded_files]$ pwd
+/home/ec2-user/sourabh/uploaded_files
+[ec2-user@ip-172-31-93-3 uploaded_files]$ cd /etc
+[ec2-user@ip-172-31-93-3 etc]$ ls
+DIR_COLORS                chkconfig.d      dnf            gshadow-            krb5.conf.d     mke2fs.conf     passwd-    request-key.conf  ssh                 tmpfiles.d
+DIR_COLORS.lightbgcolor   chrony.conf      dracut.conf    gss                 ld.so.cache     modprobe.d      pkcs11     request-key.d     ssl                 trusted-key.key
+GREP_COLORS               chrony.d         dracut.conf.d  gssproxy            ld.so.conf      modules-load.d  pkgconfig  resolv.conf       sssd                udev
+NetworkManager            chrony.keys      environment    hibinit-config.cfg  ld.so.conf.d    motd            pki        rpc               statetab.d          update-motd.d
+X11                       cifs-utils       ethertypes     host.conf           libaudit.conf   motd.d          pm         rpm               subgid              vimrc
+acpi                      cloud            exports        hostname            libibverbs.d    mtab            popt.d     rsyncd.conf       subgid-             virc
+adjtime                   cron.daily       exports.d      hosts               libnl           nanorc          printcap   rsyslog.d         subuid              wgetrc
+aliases                   cron.hourly      filesystems    idmapd.conf         libreport       netconfig       profile    rwtab.d           subuid-             xattr.conf
+alternatives              cron.monthly     fstab          image-id            libuser.conf    networks        profile.d  sasl2             sudo.conf           xdg
+amazon                    cron.weekly      gcrypt         init.d              locale.conf     nfs.conf        protocols  screenrc          sudoers             yum.repos.d
+amazon-linux-release      crontab          gnupg          inittab             localtime       nfsmount.conf   rc.d       security          sudoers.d
+amazon-linux-release-cpe  crypto-policies  groff          inputrc             login.defs      nginx           rc0.d      selinux           sysconfig
+at.deny                   csh.cshrc        group          iproute2            logrotate.conf  nsswitch.conf   rc1.d      services          sysctl.conf
+audit                     csh.login        group-         issue               logrotate.d     openldap        rc2.d      sestatus.conf     sysctl.d
+bash_completion.d         dbus-1           grub.d         issue.net           lsm             opt             rc3.d      shadow            system-release
+bashrc                    default          grub2-efi.cfg  kernel              machine-id      os-release      rc4.d      shadow-           system-release-cpe
+bindresvport.blacklist    depmod.d         grub2.cfg      keyutils            magic           pam.d           rc5.d      shells            systemd
+binfmt.d                  dhcp             gshadow        krb5.conf           man_db.conf     passwd          rc6.d      skel              terminfo
+[ec2-user@ip-172-31-93-3 etc]$ cd nginx/
+[ec2-user@ip-172-31-93-3 nginx]$ ls
+conf.d     fastcgi.conf          fastcgi_params          koi-utf  mime.types          nginx.conf          scgi_params          uwsgi_params          win-utf
+default.d  fastcgi.conf.default  fastcgi_params.default  koi-win  mime.types.default  nginx.conf.default  scgi_params.default  uwsgi_params.default
+[ec2-user@ip-172-31-93-3 nginx]$ vi /etc/nginx/conf.d/fastapi.conf
+[ec2-user@ip-172-31-93-3 nginx]$ sudo vi /etc/nginx/conf.d/fastapi.conf
+[ec2-user@ip-172-31-93-3 nginx]$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[ec2-user@ip-172-31-93-3 nginx]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-93-3 nginx]$
+[ec2-user@ip-172-31-93-3 nginx]$
+[ec2-user@ip-172-31-93-3 nginx]$
+[ec2-user@ip-172-31-93-3 nginx]$
+[ec2-user@ip-172-31-93-3 nginx]$ pwd
+/etc/nginx
+[ec2-user@ip-172-31-93-3 nginx]$ cd
+[ec2-user@ip-172-31-93-3 ~]$ vi test22.txt
+[ec2-user@ip-172-31-93-3 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-93-3 ~]$ chmod 777 test22.txt
+[ec2-user@ip-172-31-93-3 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-93-3 ~]$ curl -X POST -F "file=@/home/ec2-user/test22.txt" http://3.84.54.174/upload
+[ec2-user@ip-172-31-93-3 ~]$ ls -lrt
+total 4
+drwxr-xr-x. 5 ec2-user ec2-user 78 Mar 31 14:58 sourabh
+-rwxrwxrwx. 1 ec2-user ec2-user 53 Mar 31 15:30 test22.txt
+[ec2-user@ip-172-31-93-3 ~]$ cd sourabh/
+[ec2-user@ip-172-31-93-3 sourabh]$ cd uploaded_files/
+[ec2-user@ip-172-31-93-3 uploaded_files]$ ls
+Docker_Kubernetes_All_Days.zip
+[ec2-user@ip-172-31-93-3 uploaded_files]$ curl -L -X POST -F "file=@/home/ec2-user/test22.txt" http://3.84.54.174/upload
+{"filename":"test22.txt","content_type":"text/plain","total size":5.054473876953125e-05}[ec2-user@ip-172-31-93-3 uploaded_files]$
+[ec2-user@ip-172-31-93-3 uploaded_files]$
+[ec2-user@ip-172-31-93-3 uploaded_files]$
+[ec2-user@ip-172-31-93-3 uploaded_files]$ ls -lrt
+total 2272
+-rw-r--r--. 1 ec2-user ec2-user 2319079 Mar 31 14:59 Docker_Kubernetes_All_Days.zip
+-rw-r--r--. 1 ec2-user ec2-user      53 Mar 31 15:33 test22.txt
+[ec2-user@ip-172-31-93-3 uploaded_files]$ cd
+[ec2-user@ip-172-31-93-3 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-93-3 ~]$ vi file_generate.sh
+[ec2-user@ip-172-31-93-3 ~]$ chmod 777 file_generate.sh
+[ec2-user@ip-172-31-93-3 ~]$ ./file_generate.sh
+100+0 records in
+100+0 records out
+104857600 bytes (105 MB, 100 MiB) copied, 0.0866629 s, 1.2 GB/s
+[ec2-user@ip-172-31-93-3 ~]$ ls
+100MB_file.txt  file_generate.sh  sourabh  test22.txt
+[ec2-user@ip-172-31-93-3 ~]$ ls -lrt
+total 102408
+drwxr-xr-x. 5 ec2-user ec2-user        78 Mar 31 14:58 sourabh
+-rwxrwxrwx. 1 ec2-user ec2-user        53 Mar 31 15:30 test22.txt
+-rwxrwxrwx. 1 ec2-user ec2-user       315 Mar 31 15:42 file_generate.sh
+-rw-r--r--. 1 ec2-user ec2-user 104857600 Mar 31 15:42 100MB_file.txt
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/100MB_file.txt" http://3.84.54.174/upload
+<html>
+<head><title>413 Request Entity Too Large</title></head>
+<body>
+<center><h1>413 Request Entity Too Large</h1></center>
+<hr><center>nginx/1.24.0</center>
+</body>
+</html>
+[ec2-user@ip-172-31-93-3 ~]$ vi file_generate.sh
+[ec2-user@ip-172-31-93-3 ~]$ ./file_generate.sh
+20+0 records in
+20+0 records out
+20971520 bytes (21 MB, 20 MiB) copied, 0.00991214 s, 2.1 GB/s
+[ec2-user@ip-172-31-93-3 ~]$ ls -lrt
+total 122888
+drwxr-xr-x. 5 ec2-user ec2-user        78 Mar 31 14:58 sourabh
+-rwxrwxrwx. 1 ec2-user ec2-user        53 Mar 31 15:30 test22.txt
+-rw-r--r--. 1 ec2-user ec2-user 104857600 Mar 31 15:42 100MB_file.txt
+-rwxrwxrwx. 1 ec2-user ec2-user       313 Mar 31 15:44 file_generate.sh
+-rw-r--r--. 1 ec2-user ec2-user  20971520 Mar 31 15:44 20MB_file.txt
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/20MB_file.txt" http://3.84.54.174/upload
+<html>
+<head><title>413 Request Entity Too Large</title></head>
+<body>
+<center><h1>413 Request Entity Too Large</h1></center>
+<hr><center>nginx/1.24.0</center>
+</body>
+</html>
+[ec2-user@ip-172-31-93-3 ~]$ sudo vi /etc/nginx/conf.d/fastapi.conf
+(reverse-i-search)`': curl -L -X POST -F "file=@/home/ec2-user/test22.txt" http://3.84.54.174/upload^C
+[ec2-user@ip-172-31-93-3 ~]$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[ec2-user@ip-172-31-93-3 ~]$ sudo systemctl restart nginx
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/20MB_file.txt" http://3.84.54.174/upload
+{"filename":"20MB_file.txt","content_type":"text/plain","total size":20.0}[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/20MB_file.txt" http://3.84.54.174/upload^C
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/100MB_file.txt" http://3.84.54.174/upload
+<html>
+<head><title>413 Request Entity Too Large</title></head>
+<body>
+<center><h1>413 Request Entity Too Large</h1></center>
+<hr><center>nginx/1.24.0</center>
+</body>
+</html>
+[ec2-user@ip-172-31-93-3 ~]$ vi file_generate.sh
+[ec2-user@ip-172-31-93-3 ~]$ ./file_generate.sh
+80+0 records in
+80+0 records out
+83886080 bytes (84 MB, 80 MiB) copied, 0.0390442 s, 2.1 GB/s
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/80MB_file.txt" http://3.84.54.174/upload
+curl: (26) Failed to open/read local data from file/application
+[ec2-user@ip-172-31-93-3 ~]$ ls -lrt
+total 233480
+drwxr-xr-x. 5 ec2-user ec2-user        78 Mar 31 14:58 sourabh
+-rwxrwxrwx. 1 ec2-user ec2-user        53 Mar 31 15:30 test22.txt
+-rw-r--r--. 1 ec2-user ec2-user 104857600 Mar 31 15:42 100MB_file.txt
+-rwxrwxrwx. 1 ec2-user ec2-user       313 Mar 31 15:54 file_generate.sh
+-rw-r--r--. 1 ec2-user ec2-user  83886080 Mar 31 15:54 20MB_file.txt
+[ec2-user@ip-172-31-93-3 ~]$ curl -L -X POST -F "file=@/home/ec2-user/20MB_file.txt" http://3.84.54.174/upload
+{"filename":"20MB_file.txt","content_type":"text/plain","total size":80.0}[ec2-user@ip-172-31-93-3 ~]$
