@@ -1,11 +1,14 @@
-# My Project
+# Large file uploader
 
 ## Introduction
-Welcome to my project!
+Welcome to my project for large file uploader.
+API gateway and all the api gateway have limitation on file upload upto 10MB
 
 ## Features
-- Feature 1
-- Feature 2
+- allows large file upload on api ( upto 100 MB)
+- nginx as reverse proxy
+- allows all types of files
+- Super easy to implement
 
 ## Installation
 To install this project, follow these steps:
