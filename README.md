@@ -14,7 +14,7 @@ To install this project, follow these steps:
 3. Run the project.
 
 ## Screenshots
-<img src="uploader/Screenshot 2024-03-31 165541.png" alt="Screenshot" width="500"/>
+<img src="images/Screenshot 2024-03-31 165541.png" alt="Screenshot" width="500"/>
 
 ## Styling
 <div style="background-color: #f0f0f0; padding: 20px;">
